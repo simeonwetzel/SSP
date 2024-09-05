@@ -6,6 +6,11 @@ This tool is designed to extract spatial entities and scales from unstructured t
   
 The SSP tool outputs location names, types, and extents based on the user's query.
 
+## How the tool works
+1. We use LLM to extract spatial entities from a text input, which may include one or multiple entities. Additionally, if feasible, we determine the spatial scale of these entities, categorized as 'Local,' 'City,' 'Regional,' 'National,' 'Continental,' or 'Global.'"
+2. Then, we use the Photon service to retrieve a list of candidates for the extracted entities. The candidate list includes a Bounding Box for each candidate. The tool uses `aiohttp` for asynchronous API calls to API intending to speed up these API calls.
+3. Finally, we input the initial query along with the candidate list as context into a LLM and we let the LLM determine which candidate is the most relevant or suitable for the initial query.
+
 ## Installation
 
 1. Clone the repository:
@@ -125,11 +130,6 @@ By hosting Photon yourself, you can:
 - Optimize the server to meet your performance needs.
 - Ensure availability and control over the service.
 - Adjust the settings to fit your specific geocoding requirements.
-
-## Notes
-- The tool uses `aiohttp` for asynchronous API calls to OSM.
-- Results are returned in JSON format, allowing easy integration into larger applications.
-- The LLM is responsible for understanding the user query, while the OSM API is used for retrieving geographical information.
 
 ## Example Use Cases
 - **Geospatial Data Applications**: Extract location-based information for mapping and data visualization.
