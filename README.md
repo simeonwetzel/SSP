@@ -1,6 +1,10 @@
 # Spatial Scope Parser (SSP) 
 
-This tool is designed to extract spatial entities and scales from unstructured text input, using an LLM (Large Language Model) and the Open Source Photon geocoding service provided by [Komoot](https://photon.komoot.io/) that is based on OpenStreetMap (OSM). The tool outputs location names, types, and extents based on the user's query.
+This tool is designed to extract spatial entities and scales from unstructured text input, using a
+- :brain: **LLM (Large Language Model)** and a
+- :globe_with_meridians: **Geocoder**: the Open Source Photon geocoding service provided by [Komoot](https://photon.komoot.io/) that is based on OpenStreetMap (OSM).
+  
+The SSP tool outputs location names, types, and extents based on the user's query.
 
 ## Installation
 
@@ -14,6 +18,8 @@ This tool is designed to extract spatial entities and scales from unstructured t
 ## How to Connect a LLM
 
 To use this tool, you need to connect any Large Language Model (LLM) compatible with the langchain libary (see a list of available LLMs [here](https://python.langchain.com/v0.2/docs/integrations/chat/)). Below is an example of how to connect an LLM either using the OpenAI or the Groq API.
+
+:point_up: Please note that you have to install the respective packages in case of using another model (e.g. `pip install langchain-cohere` for using a Cohere model).
 
 ### OpenAI API Example
 ```python
