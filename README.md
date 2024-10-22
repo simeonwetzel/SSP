@@ -15,8 +15,8 @@ The SSP tool outputs location names, types, and extents based on the user's quer
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/ssp-tool.git
-   cd ssp-tool
+   git clone https://github.com/simeonwetzel/SSP.git
+
 2. Install the required dependencies:
    pip install -r requirements.txt
 
